@@ -5,13 +5,13 @@
 class Deadletter < Formula
   desc "Local-first message observability — SMTP, Kafka, Redis, webhooks in one binary"
   homepage "https://github.com/peixotomdb/deadletter"
-  version "3.4.1"
+  version "3.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/peixotomdb/DeadLetter/releases/download/v3.4.1/deadletter_3.4.1_darwin_amd64.tar.gz"
-      sha256 "b7c30d4b5accba35acc8a47fe1d2949c66fff202e3bf6cdd23b86a31a3c6d28f"
+      url "https://github.com/deadletter-engine/homebrew-deadletter/releases/download/v3.5.0/deadletter_3.5.0_darwin_amd64.tar.gz"
+      sha256 "3992cbe985d37ba7b84edd8f0cdeb019a890289cd410a3f5fe461a5457d36c32"
 
       define_method(:install) do
         bin.install "deadletter"
@@ -19,8 +19,8 @@ class Deadletter < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/peixotomdb/DeadLetter/releases/download/v3.4.1/deadletter_3.4.1_darwin_arm64.tar.gz"
-      sha256 "4cf90fa6733c56d0f1a763e128f3093516a9c0ae066832c94515d1ef6b2fd75e"
+      url "https://github.com/deadletter-engine/homebrew-deadletter/releases/download/v3.5.0/deadletter_3.5.0_darwin_arm64.tar.gz"
+      sha256 "4f84f6a2e56257f395538e3b8e09964d3bc559ded0097c1348ae71cf878da275"
 
       define_method(:install) do
         bin.install "deadletter"
@@ -31,16 +31,16 @@ class Deadletter < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/peixotomdb/DeadLetter/releases/download/v3.4.1/deadletter_3.4.1_linux_amd64.tar.gz"
-      sha256 "84fce8498a6a98795a6643c84ccddd7bee59fed6d3d5a76204e2fd0d89bc7786"
+      url "https://github.com/deadletter-engine/homebrew-deadletter/releases/download/v3.5.0/deadletter_3.5.0_linux_amd64.tar.gz"
+      sha256 "3192349d3ab25c33c617f329d4a5073b877dd6f42b1857fb74a6c288d9b33d6a"
       define_method(:install) do
         bin.install "deadletter"
         bin.install "deadletterctl" if File.exist?("deadletterctl")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/peixotomdb/DeadLetter/releases/download/v3.4.1/deadletter_3.4.1_linux_arm64.tar.gz"
-      sha256 "93175ae4de960caf9cbe71b69b7d8574f260c192f972507a785931e91506de41"
+      url "https://github.com/deadletter-engine/homebrew-deadletter/releases/download/v3.5.0/deadletter_3.5.0_linux_arm64.tar.gz"
+      sha256 "e59b912a2200c4167fc4974b1df9eeb08f803b7bb8e877e707ee982947f3c949"
       define_method(:install) do
         bin.install "deadletter"
         bin.install "deadletterctl" if File.exist?("deadletterctl")
